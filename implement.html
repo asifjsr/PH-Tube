@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth"> {/* Add scroll-smooth here for CSS-only smooth scrolling */}
+<head class="scroll-smooth>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Smooth Scroll</title>
+    {/* Import Tailwind CSS CDN */}
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Optional: Define navbar height as a CSS variable for easier management */
+        :root {
+            --navbar-height: 4rem; /* 64px, corresponds to h-16 in Tailwind */
+        }
+
+        /* Apply scroll-margin-top to all sections that are navigation targets */
+        section[id] {
+            scroll-margin-top: var(--navbar-height);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    {/* Navbar */}
+    <nav class="bg-gray-800 text-white p-4 fixed top-0 left-0 right-0 z-50 shadow-md" style="height: var(--navbar-height);">
+        <div class="container mx-auto flex justify-center items-center h-full">
+            <ul class="flex space-x-6">
+                <li><a href="#section1" class="hover:text-blue-400 transition-colors duration-300">Section 1</a></li>
+                <li><a href="#section2" class="hover:text-blue-400 transition-colors duration-300">Section 2</a></li>
+                <li><a href="#section3" class="hover:text-blue-400 transition-colors duration-300">Section 3</a></li>
+                <li><a href="#section4" class="hover:text-blue-400 transition-colors duration-300">Section 4</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    {/* Spacer to push content below the fixed navbar */}
+    {/* This is an alternative if you don't want to use scroll-margin-top on sections directly */}
+    {/* <div style="padding-top: var(--navbar-height);"></div> */}
+
+
+    {/* Content Sections */}
+    <section id="section1" class="min-h-screen bg-blue-100 flex flex-col items-center justify-center pt-16"> {/* pt-16 is navbar height if not using scroll-margin-top */}
+        <h1 class="text-4xl font-bold text-blue-700 mb-4">Section 1</h1>
+        <p class="text-lg text-blue-600">Welcome to the first section.</p>
+        <div class="mt-8 p-6 bg-white rounded-lg shadow-lg w-3/4 md:w-1/2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
+        </div>
+    </section>
+
+    <section id="section2" class="min-h-screen bg-green-100 flex flex-col items-center justify-center">
+        <h1 class="text-4xl font-bold text-green-700 mb-4">Section 2</h1>
+        <p class="text-lg text-green-600">This is the second part of our page.</p>
+        <div class="mt-8 p-6 bg-white rounded-lg shadow-lg w-3/4 md:w-1/2">
+            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor.</p>
+        </div>
+    </section>
+
+    <section id="section3" class="min-h-screen bg-yellow-100 flex flex-col items-center justify-center">
+        <h1 class="text-4xl font-bold text-yellow-700 mb-4">Section 3</h1>
+        <p class="text-lg text-yellow-600">Content for the third section goes here.</p>
+        <div class="mt-8 p-6 bg-white rounded-lg shadow-lg w-3/4 md:w-1/2">
+            <p>Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+        </div>
+    </section>
+
+    <section id="section4" class="min-h-screen bg-purple-100 flex flex-col items-center justify-center">
+        <h1 class="text-4xl font-bold text-purple-700 mb-4">Section 4</h1>
+        <p class="text-lg text-purple-600">The final section of this example.</p>
+        <div class="mt-8 p-6 bg-white rounded-lg shadow-lg w-3/4 md:w-1/2">
+            <p>Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices.</p>
+        </div>
+    </section>
+
+</body>
+</html>
